@@ -15,6 +15,6 @@ int main()
     }
     auto i=num.begin();
     cout << *next(i,2);
-
+    cout << num.capacity();
     return 0;
 }

@@ -9,8 +9,9 @@ int main()
     vector<int>num;
     num.push_back(1);
     int digit=1;
-    cin >> n;
-    for ( i=1 ; i<=n ; i++ )
+    while ( scanf("%d",&n) != EOF )
+    {
+        for ( i=1 ; i<=n ; i++ )
     {
         int carry=0;
         for ( j=0 ; j<digit ; j++ )
@@ -26,10 +27,14 @@ int main()
             num.push_back(carry);
         }
     }
-    for ( auto p=digit-1 ; p>=0 ; p-- )
+    int cnt=0;
+    for ( int p=0 ;  ; p++ )
     {
-        cout << num[p];
+        if ( num[p] == 0 ) cnt++;
+        else break;
     } 
-    printf("\n%.2f\n",(double)clock()/CLOCKS_PER_SEC);
+    cout << cnt;
+    }
+    
     return 0;
 }

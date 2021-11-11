@@ -1,11 +1,11 @@
-#define DEBUG
+#define FILEIO
 
 #include <bits/stdc++.h>
 using namespace std;
 
 int main()
 {
-    #ifdef DEBUG
+    #ifdef FILEIO
         freopen("data.in", "r", stdin);
         freopen("data.out", "w", stdout);
     #endif
