@@ -29,6 +29,14 @@ int main()
             }
         }
     }
-
+    
+    // 直接生成素数表数组 用于素数需求范围小的题
+    int b=1000;
+    cout<<"{";
+    for ( int i=0 ; i<b ; i++ )
+    {
+        cout << prime[i] << ",";
+    }
+    cout << "}";
     return 0;
 }
