@@ -3,20 +3,19 @@
 using namespace std;
 
 int couple[100001] = {-1};
-int shrinkzero(string &str)
+int present[100001] = {0};
+
+int shrinkzero(string str)
 {
-    for ( int i=0 ; i<str.length() ; i++ )
-    {
-        if ( str[i] == '0' ) str.erase(i);
-        else break;
-    }
+    if ( str == "00000" ) return 0;
+    while ( str[0] == '0' ) str.erase(0,1);
     return stod(str);
 }
 
 int main()
 {
     int n;
-    vector<string>present;
+    vector<string>presentid;
     vector<string>single;
     cin >> n;
     getchar();
@@ -36,26 +35,32 @@ int main()
     {
         string t;
         cin >> t;
-        present.push_back(t);
+        int tt = shrinkzero(t);
+        present[tt] = 1;
+        presentid.push_back(t);
     }
-    for ( int i=0 ; i<present.size() ; i++ )
+    for ( int i=0 ; i<presentid.size() ; i++ )
     {
-        string s=present[i];
+        string s=presentid[i];
         int ss = shrinkzero(s);
-        int co = -1;
+        // int co = -1;
         if ( couple[ss] != -1 )
         {
-            co = couple[ss];
+            int co = couple[ss];
+            if ( present[co] == 1 )
+            {
+                continue;
+            }
         }
-        else 
-        {
-            single.push_back(s);
-            continue;
-        }
-        if (find(present.begin(),present.end(),co) == present.end())
-        {
-            single.push_back(s);
-        }
+        single.push_back(s);
     }
+    sort(single.begin(),single.end());
+    cout << single.size() << endl;
+    for ( int i=0 ; i<single.size() ; i++ )
+    {
+        cout << single[i];
+        if ( i!=single.size()-1 ) cout << " ";
+    }
+    if (single.size() != 0 )cout << endl;
     return 0;
 }

@@ -1,16 +1,15 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
+#include <string.h>
 
 int main()
 {
     int m1,m2;
-    while ( cin >> m1 >> m2 )
+    while ( scanf("%d %d",&m1,&m2)!=EOF )
     {
         int r1=0, r2=0, r3=0;
-        string command;
-        cin >> command;
-        for ( int i=0 ; i<command.length() ; i++ )
+        char command[1001] = {'\0'};
+        scanf("%s",&command);
+        for ( int i=0 ; i<strlen(command) ; i++ )
         {
             if ( command[i] == 'A' ) 
                 r1=m1;
@@ -21,14 +20,12 @@ int main()
             else if (command[i] == 'D')
                 m2 = r3;
             else if (command[i] == 'E')
-            {
                 r3 = r1+r2;
-            }
             else if (command[i] == 'F')
                 r3 = r1-r2;
     
         }
-        cout << m1 << "," << m2 << endl;
+        printf("%d,%d\n",m1,m2);
     }
 
     

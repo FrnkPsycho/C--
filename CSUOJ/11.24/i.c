@@ -1,6 +1,4 @@
-#include <bits/stdc++.h>
-
-using namespace std;
+#include <stdio.h>
 
 int gcd(int a, int b)
 {
@@ -17,11 +15,11 @@ int gcd(int a, int b)
 int main()
 {
     int a, b, c, d;
-    while (cin >> a >> b >> c >> d)
+    while (scanf("%d %d %d %d",&a,&b,&c,&d) != EOF )
     {
         int base = b * d;
         int up = a * d + b * c;
-        cout << up / gcd(up, base) << " " << base / gcd(up, base) << endl;
+        printf("%d %d\n",up / gcd(up, base),base / gcd(up, base));
     }
 
     return 0;
