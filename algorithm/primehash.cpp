@@ -5,7 +5,7 @@ using namespace std;
 int main()
 {
     // 高效素数表 10001为边界可修改
-    int boundary = 100;
+    int boundary = 10001;
     vector<int> prime(boundary, 1);
     prime[1] = 0;
     prime[0] = 0;
@@ -31,7 +31,7 @@ int main()
     }
     
     // 直接生成素数表数组 用于素数需求范围小的题
-    int b=99;
+    int b=5005;
     cout<<"{";
     for ( int i=0 ; i<b ; i++ )
     {
