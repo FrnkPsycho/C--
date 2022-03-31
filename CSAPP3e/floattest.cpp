@@ -6,8 +6,8 @@ using namespace std;
 
 int main()
 {
-    float a;
-    a = (3.14 + 1e27) - 1e27;
-    cout << a<< endl;
+    char ch = 0xF0;
+    unsigned us = (unsigned) ch;
+    cout << us;
     return 0;
 }
